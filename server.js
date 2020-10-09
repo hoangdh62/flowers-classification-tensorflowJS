@@ -37,7 +37,7 @@ var app = express();
 
 app.post('/process', function (req, res) {
     console.log(req.files)
-    res.send("done");
+    res.sendFile(req.files);
 });
 
 app.get('/', function (req, res) {
