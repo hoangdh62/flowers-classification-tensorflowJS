@@ -34,20 +34,17 @@ const HOSTNAME = '0.0.0.0';
 
 var express = require('express');
 var app = express();
+var multer  = require('multer')
+var upload = multer({ dest: 'uploads/' })
 
-app.use(express.json());
+app.post('/ay', upload.array('file', 12), function (req, res, next) {
+    console.log(req.files)
+    res.send("done");
+});
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
 })
-
-app.post('/process', function (req, res) {
-//   var filename = path.basename(req.params.filename);
-//   filename = path.resolve(__dirname, filename);
-//   var dst = fs.createWriteStream(filename);
-//   req.pipe(dst);
-  res.sendFile(req.body.file)
-});
 
 app.listen(PORT, (err) => {
 	if (err) {
