@@ -42,10 +42,10 @@ app.get('/', function (req, res) {
 })
 
 app.post('/process', function (req, res) {
-  var filename = path.basename(req.params.filename);
-  filename = path.resolve(__dirname, filename);
-  var dst = fs.createWriteStream(filename);
-  req.pipe(dst);
+//   var filename = path.basename(req.params.filename);
+//   filename = path.resolve(__dirname, filename);
+//   var dst = fs.createWriteStream(filename);
+//   req.pipe(dst);
   res.send("sucess")
 });
 
