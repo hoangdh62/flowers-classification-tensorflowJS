@@ -29,6 +29,6 @@ app.listen(PORT, (err) => {
 	if (err) {
 		console.log(err);
 	} else {
-		console.log("Website is Up on PORT %d and HOSTNAME %s !", PORT, app.get('hello'));
+		console.log("Website is Up on PORT %d and HOSTNAME %s !", PORT, app.get('env'));
 	}
 });
