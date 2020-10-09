@@ -36,6 +36,7 @@ var express = require('express');
 var app = express();
 var fs = require('fs');
 
+app.use(express.json())
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
@@ -46,7 +47,7 @@ app.post('/process', function (req, res) {
 //   filename = path.resolve(__dirname, filename);
 //   var dst = fs.createWriteStream(filename);
 //   req.pipe(dst);
-  res.send(req)
+  res.json({requestBody: req.body})
 });
 
 app.listen(PORT, (err) => {
