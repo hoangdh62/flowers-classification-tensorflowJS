@@ -32,18 +32,28 @@ const HOSTNAME = '0.0.0.0';
 // 	}
 // });
 
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
+var fs = require('fs');
+
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.send('Hello World!');
 })
 
-app.route('/process')
-  .post(function(req1, res1) { 
-      res1.json({image : req1.body});
-      res1.send("sucess");
-   });
+app.post('/upload/:filename', function (req, res) {
+  var filename = path.basename(req.params.filename);
+  filename = path.resolve(__dirname, filename);
+  var dst = fs.createWriteStream(filename);
+  req.pipe(dst);
+  dst.on('drain', function() {
+    console.log('drain', new Date());
+    req.resume();
+  });
+  req.on('end', function () {
+    res.send(200);
+  });
+});
 
 app.listen(PORT, (err) => {
 	if (err) {
