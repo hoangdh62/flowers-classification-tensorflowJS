@@ -42,7 +42,7 @@ app.get('/', function (req, res) {
 app.route('/process')
   .post(function(req1, res1) { 
       res1.json({image : req1.body});
-      res1.send("sucess")
+      res1.send("sucess");
    });
 
 app.listen(PORT, (err) => {
