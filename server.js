@@ -4,11 +4,10 @@ const HOSTNAME = '0.0.0.0';
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-// const multer = require('multer');
+var multer = require('multer');
+var upload = multer();
 
 let app = express();
-// const upload = multer();
-
 
 // Bypass CORS error
 // var whitelist = ['https://gogul09.github.io/models/mobilenet/model.json']
@@ -19,9 +18,9 @@ var corsOptions = {
 // Cấu hình root mặc định.
 app.use(express.static(__dirname));
 
-// app.post("/profile", upload.array(), function (req, res, next) {
-// 	res.send("success")
-// });
+app.post("/profile", upload.array(), function (req, res, next) {
+	res.send("success")
+});
 
 app.get("/hello", cors(corsOptions), (req, res, next) => {
 	// res.header("Access-Control-Allow-Origin", "https://0.0.0.0:5000"); // update to match the domain you will make the request from
