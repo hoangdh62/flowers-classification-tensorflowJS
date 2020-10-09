@@ -41,7 +41,7 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 })
 
-app.post('/upload/:filename', function (req, res) {
+app.post('/process', function (req, res) {
   var filename = path.basename(req.params.filename);
   filename = path.resolve(__dirname, filename);
   var dst = fs.createWriteStream(filename);
