@@ -19,7 +19,7 @@ var corsOptions = {
 // Cấu hình root mặc định.
 app.use(express.static(__dirname));
 
-app.post('/profile', upload.array(), function (req, res, next) {
+app.post("/profile", upload.array(), function (req, res, next) {
 	res.send("success")
 });
 
