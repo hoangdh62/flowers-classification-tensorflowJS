@@ -34,9 +34,6 @@ const HOSTNAME = '0.0.0.0';
 
 var express = require('express');
 var app = express();
-var fs = require('fs');
-
-app.use(express.json())
 
 app.get('/', function (req, res) {
   res.send('Hello World!');
