@@ -35,8 +35,8 @@ const HOSTNAME = '0.0.0.0';
 var express = require('express');
 var app = express();
 
-app.get('/process', function (req, res) {
-    res.send(req.body);
+app.post('/process', function (req, res) {
+    res.send(req.body.files);
 });
 
 app.get('/', function (req, res) {
