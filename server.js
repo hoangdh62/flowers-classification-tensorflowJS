@@ -34,12 +34,16 @@ const HOSTNAME = '0.0.0.0';
 
 var express = require('express')
 var app = express()
-var multer = require('multer');
-var upload = multer();
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
 })
+
+app.route('/process')
+  .post(function(req1, res1) { 
+      res1.json({image : req1.body});
+      res1.send("sucess")
+   });
 
 app.listen(PORT, (err) => {
 	if (err) {
