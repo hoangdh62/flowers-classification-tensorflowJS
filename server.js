@@ -19,9 +19,9 @@ var corsOptions = {
 // Cấu hình root mặc định.
 app.use(express.static(__dirname));
 
-app.post("/profile", upload.array(), function (req, res, next) {
-	res.send("success")
-});
+// app.post("/profile", upload.array(), function (req, res, next) {
+// 	res.send("success")
+// });
 
 app.get("/hello", cors(corsOptions), (req, res, next) => {
 	// res.header("Access-Control-Allow-Origin", "https://0.0.0.0:5000"); // update to match the domain you will make the request from
