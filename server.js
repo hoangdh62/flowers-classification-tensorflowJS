@@ -34,6 +34,8 @@ const HOSTNAME = '0.0.0.0';
 
 var express = require('express')
 var app = express()
+var multer = require('multer');
+var upload = multer();
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
