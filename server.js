@@ -4,10 +4,10 @@ const HOSTNAME = '0.0.0.0';
 const express = require('express');
 const path = require('path');
 const cors = require('cors');
-const multer = require('multer');
+// const multer = require('multer');
 
 let app = express();
-const upload = multer();
+// const upload = multer();
 
 
 // Bypass CORS error
