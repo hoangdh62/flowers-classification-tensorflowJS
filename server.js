@@ -1,5 +1,5 @@
-// const PORT = process.env.PORT || 3000;
-// const HOSTNAME = '0.0.0.0';
+const PORT = process.env.PORT || 3000;
+const HOSTNAME = '0.0.0.0';
 
 // const express = require('express');
 // const path = require('path');
@@ -39,4 +39,11 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
-app.listen(8080)
+app.listen(PORT, (err) => {
+	if (err) {
+		console.log(err);
+	} else {
+		console.log("Website is Up on PORT %d and HOSTNAME %s !", PORT, app.get('env'));
+	}
+});
+
