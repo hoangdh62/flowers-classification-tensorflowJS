@@ -1,5 +1,5 @@
-const PORT = process.env.PORT || 3000;
-const HOSTNAME = '0.0.0.0';
+// const PORT = process.env.PORT || 3000;
+// const HOSTNAME = '0.0.0.0';
 
 // const express = require('express');
 // const path = require('path');
@@ -31,16 +31,12 @@ const HOSTNAME = '0.0.0.0';
 // 		console.log("Website is Up on PORT %d and HOSTNAME %s !", PORT, app.get('env'));
 // 	}
 // });
-const express = require('express');
-const multer = require('multer');
 
-const app = express();
-const upload = multer();
+var express = require('express')
+var app = express()
 
-app.post('/profile', upload.array(), function (req, res, next) {
-	res.send("success")
-});
+app.get('/', function (req, res) {
+  res.send('Hello World!')
+})
 
-app.get("/hello", function (req, res, next) => {
-	res.send("hello");
-});
+app.listen(3000)
