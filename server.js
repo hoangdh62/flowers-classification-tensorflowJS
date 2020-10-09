@@ -34,10 +34,8 @@ const HOSTNAME = '0.0.0.0';
 
 var express = require('express');
 var app = express();
-var multer  = require('multer')
-var upload = multer({ dest: 'uploads/' })
 
-app.post('/ay', upload.array('file', 12), function (req, res, next) {
+app.post('/process', function (req, res) {
     console.log(req.files)
     res.send("done");
 });
