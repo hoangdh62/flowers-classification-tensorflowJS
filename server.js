@@ -22,7 +22,7 @@ app.get("/", cors(corsOptions), (req, res, next) => {
   	res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 // 	res.sendFile(path.join(__dirname+"/index.html"));
 	res.send("hello");
-	next();
+// 	next();
 });
 
 app.listen(PORT, (err) => {
