@@ -46,7 +46,7 @@ app.post('/process', function (req, res) {
 //   filename = path.resolve(__dirname, filename);
 //   var dst = fs.createWriteStream(filename);
 //   req.pipe(dst);
-  res.send(req.file)
+  res.sendFile(req.file)
 });
 
 app.listen(PORT, (err) => {
