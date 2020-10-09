@@ -46,13 +46,7 @@ app.post('/process', function (req, res) {
   filename = path.resolve(__dirname, filename);
   var dst = fs.createWriteStream(filename);
   req.pipe(dst);
-  dst.on('drain', function() {
-    console.log('drain', new Date());
-    req.resume();
-  });
-  req.on('end', function () {
-    res.send(200);
-  });
+  res.send("sucess")
 });
 
 app.listen(PORT, (err) => {
